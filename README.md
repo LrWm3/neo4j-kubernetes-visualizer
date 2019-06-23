@@ -26,8 +26,8 @@ Visualize kubernetes resources using neo4j, maybe using bloom?
 
 Features I'm looking to complete:
 
-- [ ] Set up a kubernetes cluster
-- [ ] Deploy neo4j as a stateful set in its own namespace
+- [x] Set up a kubernetes cluster
+- [x] Deploy neo4j as a stateful set in its own namespace
 - [ ] Set up mock kafka deployments which have ENV variables set to read and write 
 to kafka topics, each with Services and Ingresses as well. Put one in its own namespace.
 - [ ] Poll to import kubernetes resources as json / yaml via rest API into neo4j on a fixed interval
