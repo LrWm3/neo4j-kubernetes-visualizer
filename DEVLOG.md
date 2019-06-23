@@ -80,3 +80,7 @@ database URI. My connection parameters were:
 | password            | neo4j                                  |
 
 I guess at this point I would consider neo4j set-up.
+
+## Importing kubernetes resources for initial testing
+
+Now I will start importing kubernetes resources for some initial testing.
