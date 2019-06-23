@@ -84,3 +84,12 @@ I guess at this point I would consider neo4j set-up.
 ## Importing kubernetes resources for initial testing
 
 Now I will start importing kubernetes resources for some initial testing.
+
+Doing a bunch of shit to make the API available to neo4j; its annoying for sure.
+
+```bash
+kubectl create serviceaccount api-explorer\n
+kind: ClusterRole\napiVersion: rbac.authorization.k8s.io/v1beta1\nmetadata:\n  name: log-reader\nrules:\n- apiGroups: [""] # "" indicates the core API group\n  resources: ["pods", "pods/log"]\n  verbs: ["get", "watch", "list"]\n
+kubectl apply -f resources/roles/
+kubectl create rolebinding api-explorer:log-reader --clusterrole log-reader --serviceaccount default:api-explorer\n
+```

@@ -10,7 +10,7 @@ metadata:
   namespace: croak01
 spec:
   containers:
-  - image: busybox
+  - image: radial/busyboxplus:curl
     command:
       - sleep
       - "3600"
@@ -28,7 +28,7 @@ metadata:
   namespace: croak01
 spec:
   containers:
-  - image: busybox
+  - image: radial/busyboxplus:curl
     command:
       - sleep
       - "3600"
@@ -48,7 +48,7 @@ metadata:
   namespace: croak01
 spec:
   containers:
-  - image: busybox
+  - image: radial/busyboxplus:curl
     command:
       - sleep
       - "3600"
@@ -56,7 +56,7 @@ spec:
     env:
       - name: KAFKA_IN
         value: "parse.api"
-      - name: KAFKA_IN
+      - name: KAFKA_OUT
         value: "export.api"
     name: busybox
   restartPolicy: Always

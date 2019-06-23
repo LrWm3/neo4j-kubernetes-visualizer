@@ -1,0 +1,6 @@
+WITH 'https://raw.githubusercontent.com/WilliamTheMarsman/neo4j-kubernetes-visualizer/b0793a195e2dec86ea2c733b579e3c677a368e27/demo/croak01-pods.json' AS url
+
+CALL apoc.load.json(url) YIELD value
+UNWIND value.items AS p
+MERGE (pod:Pod {id:p.metadata.uid}) ON CREATE
+  SET pod.metadata_name = p.metadata.name
