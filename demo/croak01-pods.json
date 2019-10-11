@@ -1,0 +1,455 @@
+{
+  "kind": "PodList",
+  "apiVersion": "v1",
+  "metadata": {
+    "selfLink": "/api/v1/namespaces/croak01/pods",
+    "resourceVersion": "14376"
+  },
+  "items": [{
+      "metadata": {
+        "name": "busybox",
+        "namespace": "croak01",
+        "selfLink": "/api/v1/namespaces/croak01/pods/busybox",
+        "uid": "154cf231-95c9-11e9-a021-025000000001",
+        "resourceVersion": "10877",
+        "creationTimestamp": "2019-06-23T15:10:48Z",
+        "annotations": {
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Pod\",\"metadata\":{\"annotations\":{},\"name\":\"busybox\",\"namespace\":\"croak01\"},\"spec\":{\"containers\":[{\"command\":[\"sleep\",\"3600\"],\"image\":\"busybox\",\"imagePullPolicy\":\"IfNotPresent\",\"name\":\"busybox\"}],\"restartPolicy\":\"Always\"}}\n"
+        }
+      },
+      "spec": {
+        "volumes": [{
+          "name": "default-token-zxpm7",
+          "secret": {
+            "secretName": "default-token-zxpm7",
+            "defaultMode": 420
+          }
+        }],
+        "containers": [{
+          "name": "busybox",
+          "image": "busybox",
+          "command": [
+            "sleep",
+            "3600"
+          ],
+          "resources": {
+
+          },
+          "volumeMounts": [{
+            "name": "default-token-zxpm7",
+            "readOnly": true,
+            "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+          }],
+          "terminationMessagePath": "/dev/termination-log",
+          "terminationMessagePolicy": "File",
+          "imagePullPolicy": "IfNotPresent"
+        }],
+        "restartPolicy": "Always",
+        "terminationGracePeriodSeconds": 30,
+        "dnsPolicy": "ClusterFirst",
+        "serviceAccountName": "default",
+        "serviceAccount": "default",
+        "nodeName": "docker-for-desktop",
+        "securityContext": {
+
+        },
+        "schedulerName": "default-scheduler",
+        "tolerations": [{
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "effect": "NoExecute",
+            "tolerationSeconds": 300
+          },
+          {
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "effect": "NoExecute",
+            "tolerationSeconds": 300
+          }
+        ]
+      },
+      "status": {
+        "phase": "Running",
+        "conditions": [{
+            "type": "Initialized",
+            "status": "True",
+            "lastProbeTime": null,
+            "lastTransitionTime": "2019-06-23T15:10:49Z"
+          },
+          {
+            "type": "Ready",
+            "status": "True",
+            "lastProbeTime": null,
+            "lastTransitionTime": "2019-06-23T15:10:50Z"
+          },
+          {
+            "type": "PodScheduled",
+            "status": "True",
+            "lastProbeTime": null,
+            "lastTransitionTime": "2019-06-23T15:10:48Z"
+          }
+        ],
+        "hostIP": "192.168.65.3",
+        "podIP": "10.1.0.166",
+        "startTime": "2019-06-23T15:10:49Z",
+        "containerStatuses": [{
+          "name": "busybox",
+          "state": {
+            "running": {
+              "startedAt": "2019-06-23T15:10:50Z"
+            }
+          },
+          "lastState": {
+
+          },
+          "ready": true,
+          "restartCount": 0,
+          "image": "busybox:latest",
+          "imageID": "docker-pullable://busybox@sha256:7a4d4ed96e15d6a3fe8bfedb88e95b153b93e230a96906910d57fc4a13210160",
+          "containerID": "docker://6f375477339fd743ec33eafbb0ba68bbaebe0bee7b4fe1b0a74bfdc4c17e0bb3"
+        }],
+        "qosClass": "BestEffort"
+      }
+    },
+    {
+      "metadata": {
+        "name": "export-api",
+        "namespace": "croak01",
+        "selfLink": "/api/v1/namespaces/croak01/pods/export-api",
+        "uid": "cafd4b2a-95c9-11e9-a021-025000000001",
+        "resourceVersion": "11278",
+        "creationTimestamp": "2019-06-23T15:15:53Z",
+        "annotations": {
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Pod\",\"metadata\":{\"annotations\":{},\"name\":\"export-api\",\"namespace\":\"croak01\"},\"spec\":{\"containers\":[{\"command\":[\"sleep\",\"3600\"],\"env\":[{\"name\":\"KAFKA_IN\",\"value\":\"parse.api\"},{\"name\":\"KAFKA_IN\",\"value\":\"export.api\"}],\"image\":\"busybox\",\"imagePullPolicy\":\"IfNotPresent\",\"name\":\"busybox\"}],\"restartPolicy\":\"Always\"}}\n"
+        }
+      },
+      "spec": {
+        "volumes": [{
+          "name": "default-token-zxpm7",
+          "secret": {
+            "secretName": "default-token-zxpm7",
+            "defaultMode": 420
+          }
+        }],
+        "containers": [{
+          "name": "busybox",
+          "image": "busybox",
+          "command": [
+            "sleep",
+            "3600"
+          ],
+          "env": [{
+              "name": "KAFKA_IN",
+              "value": "parse.api"
+            },
+            {
+              "name": "KAFKA_IN",
+              "value": "export.api"
+            }
+          ],
+          "resources": {
+
+          },
+          "volumeMounts": [{
+            "name": "default-token-zxpm7",
+            "readOnly": true,
+            "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+          }],
+          "terminationMessagePath": "/dev/termination-log",
+          "terminationMessagePolicy": "File",
+          "imagePullPolicy": "IfNotPresent"
+        }],
+        "restartPolicy": "Always",
+        "terminationGracePeriodSeconds": 30,
+        "dnsPolicy": "ClusterFirst",
+        "serviceAccountName": "default",
+        "serviceAccount": "default",
+        "nodeName": "docker-for-desktop",
+        "securityContext": {
+
+        },
+        "schedulerName": "default-scheduler",
+        "tolerations": [{
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "effect": "NoExecute",
+            "tolerationSeconds": 300
+          },
+          {
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "effect": "NoExecute",
+            "tolerationSeconds": 300
+          }
+        ]
+      },
+      "status": {
+        "phase": "Running",
+        "conditions": [{
+            "type": "Initialized",
+            "status": "True",
+            "lastProbeTime": null,
+            "lastTransitionTime": "2019-06-23T15:15:53Z"
+          },
+          {
+            "type": "Ready",
+            "status": "True",
+            "lastProbeTime": null,
+            "lastTransitionTime": "2019-06-23T15:15:55Z"
+          },
+          {
+            "type": "PodScheduled",
+            "status": "True",
+            "lastProbeTime": null,
+            "lastTransitionTime": "2019-06-23T15:15:53Z"
+          }
+        ],
+        "hostIP": "192.168.65.3",
+        "podIP": "10.1.0.169",
+        "startTime": "2019-06-23T15:15:53Z",
+        "containerStatuses": [{
+          "name": "busybox",
+          "state": {
+            "running": {
+              "startedAt": "2019-06-23T15:15:55Z"
+            }
+          },
+          "lastState": {
+
+          },
+          "ready": true,
+          "restartCount": 0,
+          "image": "busybox:latest",
+          "imageID": "docker-pullable://busybox@sha256:7a4d4ed96e15d6a3fe8bfedb88e95b153b93e230a96906910d57fc4a13210160",
+          "containerID": "docker://bbf987d4730998ba877a31ae39da053aa91017d16c4ad19f6bc9f623675f6310"
+        }],
+        "qosClass": "BestEffort"
+      }
+    },
+    {
+      "metadata": {
+        "name": "ingest-api",
+        "namespace": "croak01",
+        "selfLink": "/api/v1/namespaces/croak01/pods/ingest-api",
+        "uid": "caf4c30e-95c9-11e9-a021-025000000001",
+        "resourceVersion": "11280",
+        "creationTimestamp": "2019-06-23T15:15:53Z",
+        "annotations": {
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Pod\",\"metadata\":{\"annotations\":{},\"name\":\"ingest-api\",\"namespace\":\"croak01\"},\"spec\":{\"containers\":[{\"command\":[\"sleep\",\"3600\"],\"env\":[{\"name\":\"KAFKA_OUT\",\"value\":\"ingest.api\"}],\"image\":\"busybox\",\"imagePullPolicy\":\"IfNotPresent\",\"name\":\"busybox\"}],\"restartPolicy\":\"Always\"}}\n"
+        }
+      },
+      "spec": {
+        "volumes": [{
+          "name": "default-token-zxpm7",
+          "secret": {
+            "secretName": "default-token-zxpm7",
+            "defaultMode": 420
+          }
+        }],
+        "containers": [{
+          "name": "busybox",
+          "image": "busybox",
+          "command": [
+            "sleep",
+            "3600"
+          ],
+          "env": [{
+            "name": "KAFKA_OUT",
+            "value": "ingest.api"
+          }],
+          "resources": {
+
+          },
+          "volumeMounts": [{
+            "name": "default-token-zxpm7",
+            "readOnly": true,
+            "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+          }],
+          "terminationMessagePath": "/dev/termination-log",
+          "terminationMessagePolicy": "File",
+          "imagePullPolicy": "IfNotPresent"
+        }],
+        "restartPolicy": "Always",
+        "terminationGracePeriodSeconds": 30,
+        "dnsPolicy": "ClusterFirst",
+        "serviceAccountName": "default",
+        "serviceAccount": "default",
+        "nodeName": "docker-for-desktop",
+        "securityContext": {
+
+        },
+        "schedulerName": "default-scheduler",
+        "tolerations": [{
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "effect": "NoExecute",
+            "tolerationSeconds": 300
+          },
+          {
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "effect": "NoExecute",
+            "tolerationSeconds": 300
+          }
+        ]
+      },
+      "status": {
+        "phase": "Running",
+        "conditions": [{
+            "type": "Initialized",
+            "status": "True",
+            "lastProbeTime": null,
+            "lastTransitionTime": "2019-06-23T15:15:53Z"
+          },
+          {
+            "type": "Ready",
+            "status": "True",
+            "lastProbeTime": null,
+            "lastTransitionTime": "2019-06-23T15:15:55Z"
+          },
+          {
+            "type": "PodScheduled",
+            "status": "True",
+            "lastProbeTime": null,
+            "lastTransitionTime": "2019-06-23T15:15:53Z"
+          }
+        ],
+        "hostIP": "192.168.65.3",
+        "podIP": "10.1.0.167",
+        "startTime": "2019-06-23T15:15:53Z",
+        "containerStatuses": [{
+          "name": "busybox",
+          "state": {
+            "running": {
+              "startedAt": "2019-06-23T15:15:55Z"
+            }
+          },
+          "lastState": {
+
+          },
+          "ready": true,
+          "restartCount": 0,
+          "image": "busybox:latest",
+          "imageID": "docker-pullable://busybox@sha256:7a4d4ed96e15d6a3fe8bfedb88e95b153b93e230a96906910d57fc4a13210160",
+          "containerID": "docker://49fbca2616525ba65ba8b5f7ef1ea4646519c79178cc21e758e63fde47feb982"
+        }],
+        "qosClass": "BestEffort"
+      }
+    },
+    {
+      "metadata": {
+        "name": "parse-api",
+        "namespace": "croak01",
+        "selfLink": "/api/v1/namespaces/croak01/pods/parse-api",
+        "uid": "caf8d1a5-95c9-11e9-a021-025000000001",
+        "resourceVersion": "11279",
+        "creationTimestamp": "2019-06-23T15:15:53Z",
+        "annotations": {
+          "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Pod\",\"metadata\":{\"annotations\":{},\"name\":\"parse-api\",\"namespace\":\"croak01\"},\"spec\":{\"containers\":[{\"command\":[\"sleep\",\"3600\"],\"env\":[{\"name\":\"KAFKA_IN\",\"value\":\"ingest.api\"},{\"name\":\"KAFKA_OUT\",\"value\":\"parse.api\"}],\"image\":\"busybox\",\"imagePullPolicy\":\"IfNotPresent\",\"name\":\"busybox\"}],\"restartPolicy\":\"Always\"}}\n"
+        }
+      },
+      "spec": {
+        "volumes": [{
+          "name": "default-token-zxpm7",
+          "secret": {
+            "secretName": "default-token-zxpm7",
+            "defaultMode": 420
+          }
+        }],
+        "containers": [{
+          "name": "busybox",
+          "image": "busybox",
+          "command": [
+            "sleep",
+            "3600"
+          ],
+          "env": [{
+              "name": "KAFKA_IN",
+              "value": "ingest.api"
+            },
+            {
+              "name": "KAFKA_OUT",
+              "value": "parse.api"
+            }
+          ],
+          "resources": {
+
+          },
+          "volumeMounts": [{
+            "name": "default-token-zxpm7",
+            "readOnly": true,
+            "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
+          }],
+          "terminationMessagePath": "/dev/termination-log",
+          "terminationMessagePolicy": "File",
+          "imagePullPolicy": "IfNotPresent"
+        }],
+        "restartPolicy": "Always",
+        "terminationGracePeriodSeconds": 30,
+        "dnsPolicy": "ClusterFirst",
+        "serviceAccountName": "default",
+        "serviceAccount": "default",
+        "nodeName": "docker-for-desktop",
+        "securityContext": {
+
+        },
+        "schedulerName": "default-scheduler",
+        "tolerations": [{
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "effect": "NoExecute",
+            "tolerationSeconds": 300
+          },
+          {
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "effect": "NoExecute",
+            "tolerationSeconds": 300
+          }
+        ]
+      },
+      "status": {
+        "phase": "Running",
+        "conditions": [{
+            "type": "Initialized",
+            "status": "True",
+            "lastProbeTime": null,
+            "lastTransitionTime": "2019-06-23T15:15:53Z"
+          },
+          {
+            "type": "Ready",
+            "status": "True",
+            "lastProbeTime": null,
+            "lastTransitionTime": "2019-06-23T15:15:55Z"
+          },
+          {
+            "type": "PodScheduled",
+            "status": "True",
+            "lastProbeTime": null,
+            "lastTransitionTime": "2019-06-23T15:15:53Z"
+          }
+        ],
+        "hostIP": "192.168.65.3",
+        "podIP": "10.1.0.168",
+        "startTime": "2019-06-23T15:15:53Z",
+        "containerStatuses": [{
+          "name": "busybox",
+          "state": {
+            "running": {
+              "startedAt": "2019-06-23T15:15:55Z"
+            }
+          },
+          "lastState": {
+
+          },
+          "ready": true,
+          "restartCount": 0,
+          "image": "busybox:latest",
+          "imageID": "docker-pullable://busybox@sha256:7a4d4ed96e15d6a3fe8bfedb88e95b153b93e230a96906910d57fc4a13210160",
+          "containerID": "docker://00f9a808afd71c944743baadd8012520546341d4eece8c4826718ac036eec0c1"
+        }],
+        "qosClass": "BestEffort"
+      }
+    }
+  ]
+}
